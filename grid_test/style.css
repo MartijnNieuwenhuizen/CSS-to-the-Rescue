@@ -1,0 +1,129 @@
+/*main {
+	grid-column: 1 / span 2; 
+	grid-row: 2; 
+	align-self: end;
+}*/
+
+section {
+	/*width: 10em;*/
+	/*min-height: 10em;*/
+	background-color: tomato;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 1em;
+}
+h1 {
+	padding: 3em;
+}
+
+
+/* Google Docs */
+main {
+	display: grid;
+	grid-template-columns: auto minmax(min-content, 1fr); /* 1fr = one fragment || Je kan dus: .3fr & .7fr gebruiken (grid maakt deze layout voor je) */
+	grid-template-rows: auto minmax(min-content, 1fr) auto;
+	/*grid-template-areas: "title stats"
+						 "score board";*/ /* Dit is, waar zet ik welk element visueel */
+}
+
+section:nth-child(1) {
+	grid-column: 1; /* In welke colom staat dit element */
+	grid-row: 1; /* hoeveel rijen neemt dit element in beslag */
+}
+section:nth-child(2) {
+	grid-column: 1;
+	grid-row: 3;
+}
+section:nth-child(3) {
+	grid-column: 3;
+	grid-row: 3;
+}
+
+
+
+/*
+
+TERMINOLOGY
+Grid Line: Horizontal & Vertical dividing lines
+Grid Track: Generic term for row or column
+Grid Cell: Smallest area bounded by grid lines
+Grid Area: Logical space used to layout one or more grid items
+Grid Item: formatting context for its contents - not block!
+
+*/
+
+/*
+U can give grid lines names, so you can use it afterwards (think of it like a little mixin/var??)
+*/
+/* CODE */
+body {
+	display: grid;
+	grid-template-areas: 	"head" "head"
+							"nav" "main"
+							"foot .    " ;
+}
+body > header {
+	grid-area: head;
+	background-color: lime;
+}
+body > nav {
+	grid-area: nav;
+	grid-row: 3;
+	background-color: lime;
+}
+body > main {
+	grid-area: main;
+	background-color: lime;
+}
+body > footer {
+	grid-area: foot;
+	background-color: lime;
+}
+
+/*
+
+PLACING GRID ITEMS
+placed by -> automathic placement algorithm
+grid-auto-flow: divines how grid items are placed if thair posistion isn't explicit
+order: Overwrites the visual document order
+grid-auto-position: can be used to provide a  defualt positioning
+Explicid positioning is done via the: grid-row-start / grid-column-start / grid-row-end / grid-column-end properties
+
+*/
+
+
+/*
+
+Hoe kan een grid eruit zien????
+grid is:     1 2 3 4 5 6 7 8 9 
+			 a b c a b c a b c
+
+je kan dus zeggen: ik wil van 4 tot 8, of van c tot c (dit kan ook met span c -> een span is alles tussen die ene letter)/
+
+*/
+
+
+/*
+
+justify-self justify-items
+align-self align-items
+z-index kan ook
+
+*/
+#grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* fr: Fractional */
+	grid-template-rows: 1fr 1fr;
+}
+
+
+
+
+
+
+
+
+
+
+
