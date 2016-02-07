@@ -1,0 +1,43 @@
+/* >! 6 */
+li:nth-child(n+6) {
+	color: green;
+}
+
+/* < 6 */
+li:nth-last-child(n+6) {
+	color: red;
+}
+
+/* Na het 6de element */
+li:nth-child(n+6) ~ li {
+	background-color: lime;
+}
+/* Na het 1ste element */
+li ~ li {
+	background-color: tomato;
+}
+/* Aleen het tweede element */
+li:first-child + li {
+	background-color: yellow;
+}
+/* Het eerste element */
+li:first-of-type {
+	background-color: green;
+}
+
+/* --> */
+li:nth-last-child(n+6) {
+	font-size: 150%;
+}
+
+/* <-- */
+li:nth-last-child(-n+6) {
+	font-size: 50%;
+}
+
+li:nth-child {
+	transform: rotate(30deg);
+}
+li:last-of-type {
+	/*transform: rotate(-30deg);	*/
+}
