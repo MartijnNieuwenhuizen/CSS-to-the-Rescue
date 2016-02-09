@@ -1,6 +1,6 @@
 /*
 
-	If you want to use this example, please follow this steps.
+	If you want to use this example, please follow this steps becouse it usages CSS grid layout.
 	* Use Google Chrome
 	* Go to: *chrome://flags/*
 	* Set *Enable experimental Web Platform features* on Enable
@@ -17,7 +17,11 @@ hsl(22, 52%, 32%);
 
 */
 
-/* Ampersand */
+/* 
+
+Ampersand 
+
+*/
 @font-face {
     font-family: Ampersand;
     src: local('Baskerville-Italic'), 
@@ -28,7 +32,13 @@ hsl(22, 52%, 32%);
     unicode-range: U+26;
 }
 
-/* Basics */
+
+
+/* 
+
+Basics
+
+*/
 body {
 	font-family: 'Roboto', 'Helvetica', 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif;
 	margin: 0;
@@ -59,9 +69,10 @@ a {
 	padding: .5em 1em;
 	transition: .2s;
 	background-color: white;
+	box-shadow: .1em .1em .1em hsl(0, 0%, 42%);
 }
 a:hover {
-	box-shadow: .1em .1em .1em hsl(0, 0%, 42%);
+	box-shadow: 0.25em 0.25em 0.25em hsl(0, 0%, 42%);
 	background-color: #f2f2f2;
 	cursor: pointer;
 }
@@ -82,7 +93,15 @@ button:hover {
 }
 
 
-/* LISTS */
+
+
+
+
+/* 
+
+LISTS 
+
+*/
 ul {
 	padding-left: .5em;
 }
@@ -98,7 +117,11 @@ li a {
 
 
 
-/* IMAGES */
+/* 
+
+IMAGES
+
+*/
 figure {
 	margin: 1em;
 	max-width: min-content;
@@ -113,7 +136,11 @@ figcaption {
 	font-weight: bold;
 }
 
-/* SVG global */
+/* 
+
+SVG
+
+*/
 svg {
 	width: 1.2em;
 	height: 1.2em;
@@ -122,7 +149,11 @@ svg {
 
 
 
-/* HEADER */
+/* 
+
+MAIN HEADER 
+
+*/
 body > header {
 	width: 100%;
 	display: flex;
@@ -140,23 +171,52 @@ body > header figure {
 body > header img {
 	border-radius: 50%;
 }
-body > header nav {
+/* MAIN NAV */
+[role="navigation"] {
 	width: 100%;
 	background-color: hsl(33, 56%, 74%);
 }
-body > header ul {
+[role="navigation"] ul {
 	padding: 0 2em;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
 }
-body > header li {
+[role="navigation"] li {
 	margin: .5em;
+	display: inline-block;
 }
 
 
 
-/* ARTICLES */
+/* 
+
+SPESIFIC MENU ELEMENTS 
+
+*/
+/* select only the first four */
+[role="navigation"] li:nth-child(-n+4) a {
+	/*background-color: hsl(33, 56%, 84%);*/
+}
+/* select the lists after the fourth */
+[role="navigation"] li:nth-child(4) ~ li a {
+	box-shadow: none;
+}
+[role="navigation"] li:nth-child(4) ~ li a:hover {
+	cursor: not-allowed;
+}
+[role="navigation"] li:nth-child(4) ~ li {
+	display: none;
+}
+
+
+
+
+/* 
+
+ARTICLES 
+
+*/
 article {
 	background-color: hsl(107, 20%, 81%);
 	display: flex;
@@ -176,8 +236,11 @@ article p:last-of-type {
 
 
 
-/* Specific Articles */
+/* 
 
+Specific Articles 
+
+*/
 /* Form article */
 main article:nth-child(2) {
 	background-color: hsl(203, 15%, 70%);
@@ -199,7 +262,11 @@ main article:nth-child(3) figcaption {
 
 
 
-/* FORM */
+/* 
+
+FORM
+
+*/
 fieldset {
 	border: none;
 	font-size: 1.333em;
@@ -234,7 +301,11 @@ input:focus {
 
 
 
-/* FOOTER */
+/* 
+
+FOOTER 
+
+*/
 footer {
 	background-color: hsl(33, 56%, 84%);
 	display: flex;
@@ -269,20 +340,21 @@ address {
 
 
 
-/* New Profile Pic form */
+/* 
+
+ASIDE
+
+*/
 aside {
-	/*display: none;  at default */
 	background-color: rgba(160, 160, 160, 1);
 	margin-top: 3em;
-	z-index: 999;
 	max-width: 50em;
-	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
 
 	/* Idea from lea verou */
-	position: absolute; /* Maby fixed if the background shadow doesn't work / Else absolute so you can see all the content even on mobile-landscape */
+	position: absolute;
 	top: 0%;
 	left: 50%;
 	transform: translateX(-50%);
@@ -317,7 +389,9 @@ aside section header {
 	text-align: center;
 }
 
-	/* Aside Section images */
+
+
+/* Aside Section images */
 aside section img {
 	max-width: 8em;
 }
@@ -334,7 +408,10 @@ aside figcaption {
 	margin-top: -5.5em;
 	color: white;
 }
-	/* Aside Section images Color Overlay */
+
+
+
+/* Aside Section images Color Overlay */
 aside section figure:nth-of-type(1) img {
 	/*Lighten*/
 	-webkit-filter: brightness(3);
@@ -361,6 +438,8 @@ aside section figure:hover img {
 	cursor: pointer;
 }
 
+
+
 /* Aside links */
 aside a,
 aside button {
@@ -371,22 +450,57 @@ aside a {
 }
 
 
-/* blur / shadow */
-aside {
-	/* Box shadow effect for highlight by Lea Verou */
-	z-index: 100;
-    box-shadow: 0 0 0 50vmax rgba(0,0,0, .5);
+
+
+
+/*
+
+TARGETS
+
+*/
+/* TARGET One: upload your picture */
+#profile-picture {
+	opacity: 0;
+	display: none;
 }
-main,
-body >header,
-footer {
-	/* Blur effect for highlight by Lea Verou */
-	-webkit-filter: blur(2px);
+#profile-picture:target {
+	display: flex;
+	transition: opacity 0.3s ease;
+	opacity: 1;
+	box-shadow: 0 0 0 50vmax rgba(0,0,0, .5);
+}
+
+/* TARGET Two: overlay pictures */
+#profile-picture {
+	opacity: 0;
+}
+#profile-picture:target {
+	transition: opacity 0.3s ease;
+	opacity: 1;
+}
+#profile-picture section {
+	max-height: 2em;
+	overflow: hidden;
+}
+#imgage-overlay:target #profile-picture {
+	display: flex;
+	opacity: 1;
+	box-shadow: 0 0 0 50vmax rgba(0,0,0, .5);
+}
+#imgage-overlay:target #profile-picture section {
+	transition: 0.3s ease;
+	max-height: 40em;
 }
 
 
 
-/* MEDIA QUERIES */
+
+
+/* 
+
+MEDIA QUERIES 
+
+*/
 /* NOTE: Because i can't use var's, i wil declair them here, if i would use SASS i would write them inside the code */
 @media (min-width: 35.625em) { /* 570px */
 	body > header {
@@ -445,5 +559,12 @@ footer {
 		grid-row: 2; 
 		margin: 1em 0;
 	}
+	[role="navigation"] li:nth-child(8) ~ li {
+		display: inline-block;
+	}
 }
-
+@media (min-width: 80em) {
+	[role="navigation"] li {
+			display: inline-block;
+	}
+}
