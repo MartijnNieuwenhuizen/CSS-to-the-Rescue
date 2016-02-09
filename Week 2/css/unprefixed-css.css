@@ -194,11 +194,11 @@ body > header img {
 SPESIFIC MENU ELEMENTS 
 
 */
-/* select only the first four */
+/* select only the first four list items */
 [role="navigation"] li:nth-child(-n+4) a {
 	/*background-color: hsl(33, 56%, 84%);*/
 }
-/* select the lists after the fourth */
+/* select the lists items after the fourth */
 [role="navigation"] li:nth-child(4) ~ li a {
 	box-shadow: none;
 }
@@ -349,6 +349,7 @@ aside {
 	background-color: rgba(160, 160, 160, 1);
 	margin-top: 3em;
 	max-width: 50em;
+	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
@@ -410,36 +411,6 @@ aside figcaption {
 }
 
 
-
-/* Aside Section images Color Overlay */
-aside section figure:nth-of-type(1) img {
-	/*Lighten*/
-	-webkit-filter: brightness(3);
-}
-aside section figure:nth-of-type(2) img {
-	/*Overlay*/
-	-webkit-filter: saturate(3);
-}
-aside section figure:nth-of-type(3) img {
-	/*Soft Light*/
-	-webkit-filter: sepia();
-}
-aside section figure:nth-of-type(4) img {
-	/* color */
-	-webkit-filter: hue-rotate(120deg);
-}
-aside section figure:nth-of-type(5) img {
-	/*Difference*/
-	-webkit-filter: invert(.9);
-}
-
-aside section figure:hover img {
-	-webkit-filter: none;
-	cursor: pointer;
-}
-
-
-
 /* Aside links */
 aside a,
 aside button {
@@ -450,6 +421,31 @@ aside a {
 }
 
 
+/* 
+
+Aside Section images Color Overlay 
+
+*/
+aside section figure:nth-of-type(1) img {
+	-webkit-filter: brightness(3);
+}
+aside section figure:nth-of-type(2) img {
+	-webkit-filter: saturate(3);
+}
+aside section figure:nth-of-type(3) img {
+	-webkit-filter: sepia();
+}
+aside section figure:nth-of-type(4) img {
+	-webkit-filter: hue-rotate(120deg);
+}
+aside section figure:nth-of-type(5) img {
+	-webkit-filter: invert(.9);
+}
+
+aside section figure:hover img {
+	-webkit-filter: none;
+	cursor: pointer;
+}
 
 
 
@@ -460,31 +456,20 @@ TARGETS
 */
 /* TARGET One: upload your picture */
 #profile-picture {
-	opacity: 0;
 	display: none;
 }
 #profile-picture:target {
 	display: flex;
-	transition: opacity 0.3s ease;
-	opacity: 1;
 	box-shadow: 0 0 0 50vmax rgba(0,0,0, .5);
 }
 
 /* TARGET Two: overlay pictures */
-#profile-picture {
-	opacity: 0;
-}
-#profile-picture:target {
-	transition: opacity 0.3s ease;
-	opacity: 1;
-}
 #profile-picture section {
 	max-height: 2em;
 	overflow: hidden;
 }
 #imgage-overlay:target #profile-picture {
 	display: flex;
-	opacity: 1;
 	box-shadow: 0 0 0 50vmax rgba(0,0,0, .5);
 }
 #imgage-overlay:target #profile-picture section {
@@ -563,7 +548,7 @@ MEDIA QUERIES
 		display: inline-block;
 	}
 }
-@media (min-width: 80em) {
+@media (min-width: 80em) { /* 1280px */
 	[role="navigation"] li {
 			display: inline-block;
 	}
