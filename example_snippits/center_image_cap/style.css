@@ -1,0 +1,15 @@
+/* Syntax */
+/*
+
+min-content: This keyword gives us the width of the largest unbreakable element inside the box.
+
+*/
+
+figure {
+	margin: auto;
+	max-width: 300px; /* Fallback for older browser */
+	max-width: min-content; /* Official width of the img = the min-content */
+}
+img {
+	max-width: inherit; /* Issent Nessesary */
+}
