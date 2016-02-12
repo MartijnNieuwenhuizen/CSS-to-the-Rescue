@@ -9,4 +9,8 @@ Full documentation: *https://developers.google.com/web/updates/2014/03/Get-on-th
 
 ## Opdracht 1
 Code staat in de map Week 1.
-Webpagina: [Link naar de webpagina](http://martijnnieuwenhuizen.github.io/)
+[Link naar de webpagina](http://martijnnieuwenhuizen.github.io/css-to-the-rescue/one/)
+
+## Opdracht 2
+Code staat in de map Week 2.
+[Link naar de webpagina](http://martijnnieuwenhuizen.github.io/css-to-the-rescue/two/)
