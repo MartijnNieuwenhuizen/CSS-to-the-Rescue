@@ -8,4 +8,4 @@ If you want to use this example, please follow this steps.
 Full documentation: *https://developers.google.com/web/updates/2014/03/Get-on-the-CSS-Grid*
 
 ## Opdracht 2
-[Link naar de webpagina](http://martijnnieuwenhuizen.github.io/css-to-the-rescue/two/)
+[Link naar de webpagina](http://martijnnieuwenhuizen.nl/css-to-the-rescue/)
