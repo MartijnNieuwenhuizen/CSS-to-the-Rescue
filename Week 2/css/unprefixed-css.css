@@ -33,7 +33,6 @@ Ampersand
 }
 
 
-
 /* 
 
 Basics
@@ -47,7 +46,7 @@ body {
 }
 h1 {
 	font-size: 2.369em;
-	/* fix for the ampassand */
+	/* Ampassand */
 	font-family: 'Ampersand', 'Roboto', 'Helvetica', 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif;
 }
 h2 {
@@ -93,10 +92,6 @@ button:hover {
 }
 
 
-
-
-
-
 /* 
 
 LISTS 
@@ -114,7 +109,6 @@ li {
 li a {
 	padding: .3em .8em;
 }
-
 
 
 /* 
@@ -136,6 +130,7 @@ figcaption {
 	font-weight: bold;
 }
 
+
 /* 
 
 SVG
@@ -145,8 +140,6 @@ svg {
 	width: 1.2em;
 	height: 1.2em;
 }
-
-
 
 
 /* 
@@ -171,6 +164,7 @@ body > header figure {
 body > header img {
 	border-radius: 50%;
 }
+
 /* MAIN NAV */
 [role="navigation"] {
 	width: 100%;
@@ -188,7 +182,6 @@ body > header img {
 }
 
 
-
 /* 
 
 SPESIFIC MENU ELEMENTS 
@@ -196,7 +189,6 @@ SPESIFIC MENU ELEMENTS
 */
 /* select only the first four list items */
 [role="navigation"] li:nth-child(-n+4) a {
-	/*background-color: hsl(33, 56%, 84%);*/
 }
 /* select the lists items after the fourth */
 [role="navigation"] li:nth-child(4) ~ li a {
@@ -208,8 +200,6 @@ SPESIFIC MENU ELEMENTS
 [role="navigation"] li:nth-child(4) ~ li {
 	display: none;
 }
-
-
 
 
 /* 
@@ -235,7 +225,6 @@ article p:last-of-type {
 }
 
 
-
 /* 
 
 Specific Articles 
@@ -259,7 +248,6 @@ main article:nth-child(3) header {
 main article:nth-child(3) figcaption {
 	margin-top: -.3em;
 }
-
 
 
 /* 
@@ -300,7 +288,6 @@ input:focus {
 }
 
 
-
 /* 
 
 FOOTER 
@@ -337,7 +324,6 @@ address {
     flex-direction: row;
     justify-content: center;
 }
-
 
 
 /* 
@@ -390,8 +376,6 @@ aside section header {
 	text-align: center;
 }
 
-
-
 /* Aside Section images */
 aside section img {
 	max-width: 8em;
@@ -410,16 +394,16 @@ aside figcaption {
 	color: white;
 }
 
-
 /* Aside links */
-aside a,
-aside button {
-	background-color: tomato;
+aside > a {
+	background-color: hsl(7, 50%, 50%);
+}
+aside header a {
+	background-color: hsl(107, 20%, 81%);
 }
 aside a {
 	margin: 1em 0;
 }
-
 
 /* 
 
@@ -446,7 +430,6 @@ aside section figure:hover img {
 	-webkit-filter: none;
 	cursor: pointer;
 }
-
 
 
 /*
@@ -476,9 +459,9 @@ TARGETS
 	transition: 0.3s ease;
 	max-height: 40em;
 }
-
-
-
+#imgage-overlay:target aside > a {
+	background-color: hsl(107, 20%, 81%);
+}
 
 
 /* 
@@ -486,7 +469,6 @@ TARGETS
 MEDIA QUERIES 
 
 */
-/* NOTE: Because i can't use var's, i wil declair them here, if i would use SASS i would write them inside the code */
 @media (min-width: 35.625em) { /* 570px */
 	body > header {
 		flex-direction: row;
