@@ -16,7 +16,6 @@ hsl(203, 15%, 70%);
 hsl(22, 52%, 32%);
 
 */
-
 /* 
 
 Ampersand 
@@ -80,7 +79,11 @@ a:hover {
 }
 a:focus {
 	outline: none;
-	box-shadow: inset 10em 0 0 0 hsla(140, 50%, 40%, .5);
+	box-shadow: inset 12em 0 0 0 hsla(140, 50%, 40%, .5);
+}
+p a {
+	background-color: transparent;
+	text-decoration: underline;
 }
 button {
 	transition: .2s;
@@ -219,20 +222,7 @@ SPESIFIC MENU ELEMENTS
 	display: none;
 }
 
-/* ASIDE ABOUT */
-/*[role='heading'] {
-	display: flex;
-	flex-flow: column wrap;
-	align-items: center;
-	flex: 1;
-	padding: .5em .3em;
-}
-[role='heading'] figure {
-	max-width: 20em;
-}
-[role='heading'] img {
-	border-radius: 50%;
-}*/
+
 /* ASIDE ABOUT */
 [role='heading'] {
 	display: flex;
@@ -295,7 +285,7 @@ article p:last-of-type {
 }
 article .close {
 	position: absolute;
-	top: 10em;
+	top: 15em;
 	right: 1em;
 	box-shadow: none;
 	background-color: transparent;
@@ -327,6 +317,7 @@ Photo's article
 	background-color: #f9f9f9;
 	order: 2;
 	flex: 1;
+	max-width: 80em;
 }
 [role='contentinfo'] h1 {
 	font-weight: 100;
@@ -457,7 +448,7 @@ Aside
 
 */
 [role='banner'] {
-	background-color: rgba(160, 160, 160, 1);
+	background-color: #f9f9f9;
 	margin-top: 3em;
 	width: 90%;
 	max-width: 50em;
@@ -494,12 +485,13 @@ Aside
 	align-items: center;
 	width: 100%;
 	padding: 0 2em;
-	background-color: rgba(180, 180, 180, 1);
+	background-color: hsl(190, 30%, 30%);
 	padding-bottom: 2em;
 }
 [role='banner'] section header {
 	width: 100%;
 	text-align: center;
+	color: #f1f1f1;
 }
 
 /* Aside Section images */
@@ -570,11 +562,6 @@ Aside Section images Color Overlay
 [role='banner'] section figure:hover img {
 	-webkit-filter: none;
 	cursor: pointer;
-}
-
-aside {
-	align-self: flex-start;
-	justify-self: flex-start; 
 }
 
 
@@ -763,6 +750,11 @@ MEDIA QUERIES
 		margin-right: 1em;
 	}
 }
+@media (min-width: 43.313em) { /* 693px */
+	article .close {
+		top: 13em;
+	}
+}
 
 @media (min-width: 45em) { /* 720px */
 	body > header p {
@@ -773,6 +765,9 @@ MEDIA QUERIES
 	}
 	[role='banner'] > header {
 		padding-bottom: 2em;
+	}
+	article .close {
+		top: 10em;
 	}
 }
 @media (min-width: 51.875em) { /* 830px */
@@ -786,10 +781,9 @@ MEDIA QUERIES
 	main {
 		flex-flow: row wrap;
 	}
-	[role='contentinfo'] {
-		
-	}	
 	[role='heading'] {
+		align-self: flex-start;
+		margin-right: auto;
 		max-width: 15em;
 		background-color: #f1f1f1;
 		border-right: 1px solid rgba(36, 36, 36, .3);
