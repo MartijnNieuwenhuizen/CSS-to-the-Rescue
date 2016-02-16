@@ -81,14 +81,16 @@ button {
 	padding: .3em .8em;
 	font-size: 1em;
 	margin-top: 1em;
-	background-color: hsl(203, 15%, 80%);
+	background-color: hsla(140, 50%, 40%, .5);
 	color: #fff;
 	font-weight: 100;
 }
 button:hover {
-	background-color: hsl(203, 15%, 85%);
-	box-shadow: .1em .1em .1em hsl(0, 0%, 42%);
+	background-color: hsla(140, 50%, 40%, 1);
 	cursor: pointer;
+}
+button:focus {
+	outline: 3px solid hsla(140, 50%, 40%, 1);
 }
 
 
@@ -284,6 +286,11 @@ article h2 {
 article p:last-of-type {
 	padding-bottom: 2em;
 }
+article .close {
+	position: absolute;
+	top: 10em;
+	right: 1em;
+}
 
 
 /* 
@@ -291,20 +298,20 @@ article p:last-of-type {
 Specific Articles 
 
 */
-/* Form article */
-[role='form'] {
-	background-color: hsl(190, 30%, 30%);
-	order: 3;
-	width: 100%;
-}
+/* 
 
-/* Photo's article */
+Photo's article 
+
+*/
 [role='contentinfo'] {
 	flex-flow: row wrap;
 	justify-content: center;
 	background-color: #f9f9f9;
 	order: 2;
 	flex: 1;
+}
+[role='contentinfo'] h1 {
+	font-weight: 100;
 }
 [role='contentinfo'] header {
 	width: 100%;
@@ -321,6 +328,34 @@ Specific Articles
 	order: 1;
 }
 
+/*
+
+PASSWORD
+
+*/
+[role='form'] {
+	background-color: hsl(190, 30%, 30%);
+	order: 3;
+	width: 100%;
+}
+[role='form'] h1 {
+	color: white;
+}
+#password {
+	order: -1;
+	overflow: hidden;
+	transition: .7s;
+	max-height: 0;
+	z-index: -10;
+	padding: 0;
+}
+#password:target {
+	max-height: 30em;
+	z-index: 10;
+	box-shadow: 0 0 0 100vmax rgba(0,0,0, .3);
+	padding: 2em 0;
+}
+
 
 /* 
 
@@ -332,30 +367,30 @@ fieldset {
 	font-size: 1.333em;
 	display: flex;
 	flex-flow: column wrap;
+	color: #f1f1f1;
 }
 legend {
 	padding-bottom: .3em;
 	margin-left: -.5em;
 	font-weight: bold;
-	color: #383838;
 }
 label {
 	padding-bottom: .3em;
 }
 input:first-of-type {
-	margin-bottom: 2em;
+	margin-bottom: 5em;
 }
 input:nth-of-type(2) {
 	margin-bottom: .8em;
 }
 input {
 	border: none;
-	border-bottom: 1px solid black;
-	background-color: hsla(203, 15%, 80%, .2);
+	border-bottom: 1px solid white;
+	background-color: hsla(203, 15%, 80%, .0);
 	padding: .5em;
 }
 input:focus {
-	background-color: hsla(203, 15%, 80%, .8);
+	background-color: hsla(203, 15%, 80%, 1);
 	outline: none;
 }
 
@@ -415,7 +450,7 @@ Aside
 
 	/* Idea from lea verou */
 	position: absolute;
-	top: 0%;
+	top: 5.7em;
 	left: 50%;
 	transform: translateX(-50%);
 }
@@ -475,7 +510,10 @@ Aside
 	cursor: not-allowed;
 }
 [role='banner'] header a {
-	background-color: hsl(107, 20%, 81%);
+	background-color: hsla(140, 50%, 40%, .5);
+}
+[role='banner'] header a:hover {
+	background-color: hsla(140, 50%, 40%, 1);
 }
 [role='banner'] a {
 	margin: 1em 0;
@@ -545,7 +583,10 @@ TARGETS
 	max-height: 40em;
 }
 #imgage-overlay:target [role='banner'] > a {
-	background-color: hsl(107, 20%, 81%);
+	background-color: hsla(140, 50%, 40%, .5);
+}
+#imgage-overlay:target [role='banner'] > a:hover {
+	background-color: hsla(140, 50%, 40%, 1);
 }
 #imgage-overlay:target [role='banner'] > a:hover {
 	cursor: pointer;
@@ -562,28 +603,6 @@ TARGETS
 	animation: highlight .7s;
 }
 
-
-
-/*
-
-PASSWORD
-
-*/
-#password {
-	position: fixed;
-	top: 3em;
-	right: 0;
-	/*max-width: 30em;*/
-	overflow: hidden;
-	transition: .7s;
-	max-width: 0;
-	z-index: -10;
-}
-#password:target {
-	max-width: 30em;
-	z-index: 10;
-	box-shadow: 0 0 0 100vmax rgba(0,0,0, .3);
-}
 
 /*
 
