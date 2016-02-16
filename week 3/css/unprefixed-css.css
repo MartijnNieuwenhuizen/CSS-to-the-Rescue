@@ -293,7 +293,7 @@ Specific Articles
 */
 /* Form article */
 [role='form'] {
-	background-color: hsl(203, 15%, 70%);
+	background-color: hsl(190, 30%, 30%);
 	order: 3;
 	width: 100%;
 }
@@ -552,27 +552,37 @@ TARGETS
 }
 
 
+@keyframes highlight {
+	70% {
+		background-color: rgba(200, 200, 200, 1);
+	}
+}
+
+#photo-albums:target {
+	animation: highlight .7s;
+}
+
+
 
 /*
 
 PASSWORD
 
 */
-@keyframes slide-in {
-	90% {
-		transform: translateX(3em);
-	}
-	100% {
-		transform: translateX(3em);
-	}
-}
-
 #password {
-	/*max-width: min-content;*/
-	/*transform: translateX(calc(100% + 3em));*/
+	position: fixed;
+	top: 3em;
+	right: 0;
+	/*max-width: 30em;*/
+	overflow: hidden;
+	transition: .7s;
+	max-width: 0;
+	z-index: -10;
 }
 #password:target {
-	animation: slide-in .7s forwards;
+	max-width: 30em;
+	z-index: 10;
+	box-shadow: 0 0 0 100vmax rgba(0,0,0, .3);
 }
 
 /*
