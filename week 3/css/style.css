@@ -241,24 +241,6 @@ article h2 {
 article p:last-of-type {
 	padding-bottom: 2em;
 }
-article .close {
-	position: absolute;
-	top: 15em;
-	right: 1em;
-	box-shadow: none;
-	background-color: transparent;
-	opacity: 0;
-}
-article .close svg {
-	fill: hsl(0,0%,100%);
-	width: 3em;
-	height: 3em;
-}
-article .close:hover svg {
-	fill: hsla(140, 50%, 40%, 1);
-	width: 3em;
-	height: 3em;
-}
 
 
 /*-------------------------------------
@@ -524,6 +506,24 @@ PASSWORD SECTION
 [role='form'] h1 {
 	color: white;
 }
+article .close {
+	position: absolute;
+	top: 15em;
+	right: 1em;
+	box-shadow: none;
+	background-color: transparent;
+}
+article .close svg {
+	fill: hsl(0,0%,100%);
+	width: 3em;
+	height: 3em;
+	opacity: 0;
+}
+article .close:hover svg {
+	fill: hsla(140, 50%, 40%, 1);
+	width: 3em;
+	height: 3em;
+}
 #password {
 	order: -1;
 	overflow: hidden;
@@ -538,7 +538,7 @@ PASSWORD SECTION
 	box-shadow: 0 0 0 100vmax rgba(0,0,0, .3);
 	padding: 2em 0;
 }
-#password:target .close {
+#password:target .close svg {
 	opacity: 1;
 }
 
