@@ -227,6 +227,19 @@ SPESIFIC MENU ELEMENTS
 ARTICLES 
 
 */
+
+
+/*
+Hey Martijn!
+Misschien vind je het leuk om hier naar te kijken:
+https://www.youtube.com/watch?v=1OKZOV-iLj4
+Hier verteld Harry Roberts hoe je css geparsed wordt, daarbij legt hij uit 
+dat het handig is om de minst specefieke selectoren als eerst te benoemen 
+en zo steeds specefiekere selctoren te gebruiken.
+Misschien is het voor nu niet echt nodig, maar ik vond het zelf wel interessant!
+*/
+
+
 article {
 	background-color: hsl(107, 20%, 81%);
 	display: -webkit-box;
